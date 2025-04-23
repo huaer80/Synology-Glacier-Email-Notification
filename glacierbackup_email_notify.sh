@@ -10,11 +10,10 @@ EMAIL_SUBJECT="Synology Glacier Backup Status"
 # Path to your SQLite database file
 DB_PATH="/volume1/@GlacierBackup/etc/sysinfo.db"
 
-# SQL query to select the last 2 entries based on an auto-incrementing ID (or timestamp)
-# Assumes there is an 'id' column or a timestamp column you can order by
+# SQL query to select the last 2 entries based on an auto-incrementing column key
 SQL_QUERY="SELECT key,level,date,message FROM sysinfo_tb ORDER BY key DESC LIMIT 2;"
 
-# Run the query with formatted output (with headers and column mode)
+# Run the query with formatted output
 RESULT=$(sqlite3 "$DB_PATH" "$SQL_QUERY")
 
 # Separate the results into two lines
