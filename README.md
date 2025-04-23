@@ -18,5 +18,5 @@ Note: you may have a different volume name.
 2) Ideally, the scheduled task should only be executed after the backup task has completed.  What I did was to estimate the time the backup task would complete and schedule this task to execute 30min after.
 
 **To Do**
-1) Instead of performing a scheduled task to run this script, the email notificaiton should be sent when the actual backup task completed.
+1) Instead of performing a scheduled task to run this script, the email notificaiton should be sent when the actual backup task is completed.
 2) One idea is to use SQLite DB trigger on insert.
